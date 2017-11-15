@@ -37,6 +37,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // Authentication
+// fix deprecated warning: https://github.com/expressjs/session/issues/56
 app.use(
   session({
     secret: "deploy-exercise",
@@ -44,7 +45,9 @@ app.use(
     store: new MongoStore({
       mongooseConnection: mongoose.connection,
       ttl: 24 * 60 * 60 // 1 day
-    })
+    }),
+    resave: true,
+    saveUninitialized: true
   })
 );
 app.use(cookieParser());
