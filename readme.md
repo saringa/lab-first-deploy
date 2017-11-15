@@ -28,6 +28,7 @@ always set start script to: `"start": "node ./bin/www"` and **NOT NODEMON** `"st
 ```
 
 ## Set heroku as a remote on your git
+ih-first-deploy is the name of the app name you created in heroku.com.
 `$ heroku git:remote -a ih-first-deploy`
 
 ## Show remotes available
