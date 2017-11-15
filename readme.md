@@ -17,7 +17,7 @@ mongoose.connect(process.env.MONGODB_URI, {
 `$ heroku login`
 
 ## Update scripts in package.json
-always set start script to: `"start": "node ./bin/www"` and NOT `"start": "nodemon ./bin/www"`. Otherwise heroku will not be able to run the script and start NODE.
+always set start script to: `"start": "node ./bin/www"` and **NOT NODEMON** `"start": "nodemon ./bin/www"`. Otherwise heroku will not be able to run the script and start **NODE**.
 
 ## Set node and [npm & node engines](https://devcenter.heroku.com/articles/nodejs-support) in package.json
 ```json
@@ -34,13 +34,13 @@ always set start script to: `"start": "node ./bin/www"` and NOT `"start": "nodem
 `$ git remote -v`
 
 ## After commited changed to master, push changes o heroku
-$ git push heroku master
+`$ git push heroku master`
 
 ## Show heroku logs (ex. errors.)
-$ heroku logs
+`$ heroku logs`
 
 ## Deploy mongodb
-$ heroku addons:create mongolab:sandbox
+`$ heroku addons:create mongolab:sandbox`
 
 ## Open our MongoLab instance
-$ heroku addons:open mongolab
+`$ heroku addons:open mongolab`
