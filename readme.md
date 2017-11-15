@@ -2,12 +2,33 @@
 
 ```javascript
 mongoose.Promise = global.Promise;
-mongoose.connect(process.env.MONGODB_URI, {
+mongoose.connect("mongodb://localhost/deploy-exercise", {
   keepAlive: true,
   reconnectTries: Number.MAX_VALUE,
   useMongoClient: true
 });
 ```
+
+# Node.js: Setting Environment Variables
+
+## Install dotenv
+`$ npm install --save dotenv`
+
+## Require dotenv in first line in app.js
+`require("dotenv").config();`
+
+## Create a .env file
+`$ touch .env` in your project folder
+
+## Add new Environment Variable
+`MONGODB_URI=mongodb://localhost/deploy-exercise``
+
+## Add the .env file to your .gitignore file (important!!!)
+
+## Update the mongoose connection code URI
+From `"mongodb://localhost/deploy-exercise"` to `process.env.MONGODB_URI`
+
+## On heroku.com you can under settings tab set your custom mongodb mLab URI
 
 # Heroku Settings
 
