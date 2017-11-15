@@ -14,7 +14,7 @@ mongoose.connect("mongodb://localhost/deploy-exercise", {
 ## 1. Install dotenv
 `$ npm install --save dotenv`
 
-## 2. Require dotenv in first line in app.js
+## 2. Require dotenv at the first line in app.js
 `require("dotenv").config();`
 
 ## 3. Create a .env file
@@ -25,7 +25,7 @@ mongoose.connect("mongodb://localhost/deploy-exercise", {
 
 ## 5. Add the .env file to your .gitignore file (important!!!)
 
-## 6. Update the mongoose connection code URI
+## 6. Update the mongoose connection code URI in app.js
 FROM `"mongodb://localhost/deploy-exercise"` TO `process.env.MONGODB_URI`
 
 ## 7. On heroku.com you can under settings tab set your custom mongodb mLab URI
@@ -69,3 +69,8 @@ ih-first-deploy is the name of the app name you created in heroku.com.
 
 ## 11. Open our MongoLab instance
 `$ heroku addons:open mongolab`
+
+
+# BONUS
+
+At Herok.com you can also set automatic deploy by connecting your github master branch and when you push changes the page is automatic deployed in a couple of seconds to Heroku!
