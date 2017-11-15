@@ -37,7 +37,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // Authentication
-// fix deprecated warning: https://github.com/expressjs/session/issues/56
+// fix deprecation warning: https://github.com/expressjs/session/issues/56
 app.use(
   session({
     secret: "deploy-exercise",
